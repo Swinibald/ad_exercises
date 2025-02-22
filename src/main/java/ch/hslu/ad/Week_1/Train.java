@@ -17,4 +17,12 @@ public class Train {
         }
         return totalSeats;
     }
+
+    public String getTrain() {
+        String trainString = "";
+        for (Wagon wagon : train) {
+            trainString += wagon.getIndex() + " ";
+        }
+        return trainString;
+    }
 }

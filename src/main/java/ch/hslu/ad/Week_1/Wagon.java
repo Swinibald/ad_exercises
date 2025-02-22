@@ -5,12 +5,11 @@ public class Wagon {
     private Object adjacentWagon;
     private String index;
 
-    public Wagon(String index, int seats) {
-        Train train = new Train();
+    public Wagon(String index, int seats, Train train) {
         this.seats = seats;
         this.index = index;
         this.adjacentWagon = null;
-        train.addWagon(this);
+        train.addWagon(this); // Add this wagon to the provided train
     }
 
     public Object getAdjacentWagon() {
