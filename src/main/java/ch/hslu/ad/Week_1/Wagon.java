@@ -2,21 +2,21 @@ package ch.hslu.ad.Week_1;
 
 public class Wagon {
     private int seats;
-    private Object adjacentWagon;
+    private Wagon adjacentWagon;
     private String index;
 
-    public Wagon(String index, int seats, Train train) {
+    public Wagon(String index, int seats, Train train, Wagon adjacentWagon) {
         this.seats = seats;
         this.index = index;
-        this.adjacentWagon = null;
+        this.adjacentWagon = adjacentWagon;
         train.addWagon(this); // Add this wagon to the provided train
     }
 
-    public Object getAdjacentWagon() {
+    public Wagon getAdjacentWagon() {
         return adjacentWagon;
     }
 
-    public void setAdjacentWagon(Object adjacentWagon) {
+    public void setAdjacentWagon(Wagon adjacentWagon) {
         this.adjacentWagon = adjacentWagon;
     }
 

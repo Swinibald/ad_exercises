@@ -1,24 +1,41 @@
 package ch.hslu.ad;
 
+import java.util.logging.Logger;
+
 public class Task {
-    private int a;
-    private int b;
-    private int c;
+    private int a = 0;
+    private int b = 0;
+    private int c = 0;
+    Logger log = Logger.getLogger(Task.class.getName());
 
     public int task1() {
-        a = a++;
+        a = a + 1;
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            log.info("could not sleep");
+        }
         return a;
     }
 
     public int task2() {
-        b = b++;
+        b = b + 1;
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            log.info("could not sleep");
+        }
         return b;
     }
 
     public int task3() {
-        c = c++;
+        c = c + 1;
+        try {
+            Thread.sleep(5);
+        } catch (InterruptedException e) {
+            log.info("could not sleep");
+        }
         return c;
-
     }
 
     public void task(final int n) {
@@ -38,4 +55,12 @@ public class Task {
         System.out.println(a + "," + b + "," + c);
     }
 
+    public static void main(String[] args) {
+        Task task = new Task();
+        long startTime = System.nanoTime(); // Start time
+        task.task(100);
+        long endTime = System.nanoTime(); // End time
+        long duration = (endTime - startTime) / 1_000_000; // Convert to milliseconds
+        System.out.println("Execution time: " + duration + " ms");
+    }
 }

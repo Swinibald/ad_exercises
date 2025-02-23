@@ -8,12 +8,11 @@ public class Main {
                 // Personenwagon erzeugen,
                 // mit unterschiedlichen Kapazitäten
                 Train train = new Train();
-                Wagon wagon1 = new Wagon("W001", 60, train);
-                Wagon wagon2 = new Wagon("W002", 40, train);
-                Wagon wagon3 = new Wagon("W003", 80, train);
+                Wagon w = new Wagon("W001", 60, train,
+                    new Wagon("W002", 40, train,
+                        new Wagon("W003", 80, train, null)));
                 // Verkettung der Wagon
-                wagon1.setAdjacentWagon(wagon2);
-                wagon2.setAdjacentWagon(wagon3);
+
                 // Berechnung der Adjecentesamtanzahl Pl
                 int gesamt = train.calculateTrainSeats();
                 Log.info("Gesamtanzahl Plätze: " + gesamt); 
