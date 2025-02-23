@@ -63,4 +63,6 @@ public class Task {
         long duration = (endTime - startTime) / 1_000_000; // Convert to milliseconds
         System.out.println("Execution time: " + duration + " ms");
     }
+    // Output: 4,300,200
+    // Execution time: 100 ms
 }
