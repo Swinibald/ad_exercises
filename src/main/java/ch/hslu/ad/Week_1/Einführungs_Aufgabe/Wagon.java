@@ -1,4 +1,4 @@
-package ch.hslu.ad.Week_1;
+package ch.hslu.ad.Week_1.Einführungs_Aufgabe;
 
 public class Wagon {
     private int seats;

@@ -1,4 +1,4 @@
-package ch.hslu.ad;
+package ch.hslu.ad.Week_1.Laufzeit_Betrachtungen;
 
 import java.util.logging.Logger;
 

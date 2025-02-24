@@ -1,8 +1,8 @@
-package ch.hslu.ad.Week_1;
+package ch.hslu.ad.Week_1.Einführungs_Aufgabe;
 
 import java.util.logging.Logger;
 
-public class Main {  
+public class main {  
     static Logger Log = Logger.getLogger(Main.class.getName());     
             public static void main(final String[] args) {
                 // Personenwagon erzeugen,
