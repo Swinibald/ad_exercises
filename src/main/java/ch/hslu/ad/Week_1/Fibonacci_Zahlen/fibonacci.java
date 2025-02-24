@@ -25,10 +25,7 @@ ArrayList<Integer> fiboList = new ArrayList<Integer>();
         }
 
     }
-    public static void main (String[] args){
-        fibonacci fib = new fibonacci();
-        System.out.println(fib.fiboIter(5));
-    }
+
 
     public int fiboIter(int n){
         int a = 0;
@@ -46,7 +43,15 @@ ArrayList<Integer> fiboList = new ArrayList<Integer>();
         return a;
             }
     }
+    public int NumberOfSymNumbers(int n){
+        n = (n + 2 -1) /2;
+        n = 10^n + 10;
 
-
-
+        System.out.println(n);
+        return n;
+    }    
+    public static void main (String[] args){
+        fibonacci fib = new fibonacci();
+        System.out.println(fib.NumberOfSymNumbers(3));
+    }
 }
