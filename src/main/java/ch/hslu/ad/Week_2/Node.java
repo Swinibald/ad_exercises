@@ -13,7 +13,7 @@ public void setNextNode(Node nextNode){
     this.nextNode = nextNode;
 }
 
-public Node getNexNode(){
+public Node getNextNode(){
     return nextNode;
 }
 
