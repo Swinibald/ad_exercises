@@ -25,8 +25,20 @@ public Node<T> getFirstNode(){
     }
 
 public Node<T> search(Node<T> node){
-    for (size iterable_element : iterable) {
+    int iterator;
+    iterator = size();
+    if (equals(getFirstNode(), node)){
+        return getFirstNode();
+        } else {
+    while (iterator != 1) {
+        if (equals(getFirstNode().getNextNode(), node)){
+            return getFirstNode().getNextNode();
+        } else {
+        iterator = iterator - 1; 
+        }
         
+
+    }    
     }
 
 }
