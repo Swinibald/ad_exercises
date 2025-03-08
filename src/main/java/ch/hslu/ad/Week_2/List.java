@@ -1,6 +1,8 @@
 package ch.hslu.ad.Week_2;
 
-public class List<T> {
+import java.util.Iterator;
+
+public class List<T> implements Iterable<T>{
     private Node<T> head;
     private int numOfObjects;
 
@@ -95,6 +97,11 @@ public Node<T> getFirstNode(){
         removedHead.setNextNode(null); // Verbindung zum Rest der Liste lösen (optional)
     
         return removedHead;  // Gibt entfernte Node zurück
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ListIterator<T>(this);
     }
     
     }
