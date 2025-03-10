@@ -14,7 +14,7 @@ public void push(String element);
  * 
  * @return the element on top of the Stack
  */
-public String pull();
+public String pop();
 
 /**
  * Measures the Amount of elements in  the Stack.
