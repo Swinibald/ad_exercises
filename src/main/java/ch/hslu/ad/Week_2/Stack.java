@@ -2,6 +2,7 @@ package ch.hslu.ad.Week_2;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;
+
 import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 
@@ -39,6 +40,7 @@ public class Stack implements StackInterface{
         return pop;
         }else{
             log.error("Stack is empty.");
+            throw new EmptyStackException();
         }
     }
 

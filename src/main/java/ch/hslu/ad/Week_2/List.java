@@ -2,7 +2,7 @@ package ch.hslu.ad.Week_2;
 
 import java.util.Iterator;
 
-public class List<T> implements Iterable<T>{
+class List<T> implements Iterable<T>{
     private Node<T> head;
     private int numOfObjects;
 
