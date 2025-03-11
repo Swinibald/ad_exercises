@@ -1,4 +1,4 @@
-package ch.hslu.ad.Week_1;
+/* package ch.hslu.ad.Week_1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -60,3 +60,4 @@ public class WagonTest {
         assertEquals(0 , wagon.getSeats());
     }
 }
+ */

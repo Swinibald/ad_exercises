@@ -3,7 +3,7 @@ package ch.hslu.ad.Week_2;
 import java.util.Iterator;
 
 public class ListIterator<T> implements Iterator<T>{
-    private Node<T> current;
+    private Node<T> current = null;
 
     public ListIterator(List<T> list) { 
         current = list.getFirstNode(); 
@@ -15,7 +15,6 @@ public class ListIterator<T> implements Iterator<T>{
 
     @Override
     public T next() {
-        Node<T> current = null;
         current = current.getNextNode();
         return current.getData();            
         }        
