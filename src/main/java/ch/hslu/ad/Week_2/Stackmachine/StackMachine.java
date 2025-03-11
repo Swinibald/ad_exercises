@@ -6,7 +6,6 @@ import java.util.Stack;
 
 public class StackMachine {
     private Stack<Integer> stack = new Stack<>();
-    private List<Runnable> cmds; 
 
 
     public StackMachine(List<Runnable> cmds){
