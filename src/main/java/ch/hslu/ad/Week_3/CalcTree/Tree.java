@@ -1,15 +1,14 @@
 package ch.hslu.ad.Week_3.CalcTree;
 
 import ch.hslu.ad.Week_3.treeInterface;
-import org.slf4j.LoggerFactory;
-import org.slf4j.Logger;
+
 
 public class Tree implements treeInterface {
     private static Node root;
-        private static Logger log = LoggerFactory.getLogger(Tree.class);
     private static String equation = "";
          
         
+            @SuppressWarnings("static-access")
             public Tree (Node rootNode){
                       this.root = rootNode;
             }
@@ -50,6 +49,7 @@ public class Tree implements treeInterface {
                         toStringRec(currentNode.getNodeChildRight());
                     }
                 }
+                @SuppressWarnings("unused")
                 public static void main(String[] args) {
                     
                     Node n = new MulNode(new AddNode(new NumNode(2), new NumNode(3)), new NumNode(4));

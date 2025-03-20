@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Queue;
 
+@SuppressWarnings("rawtypes")
 public class MyQueue implements Queue{
 
     @Override
