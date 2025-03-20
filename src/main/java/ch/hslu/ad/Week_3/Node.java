@@ -6,8 +6,20 @@ public class Node {
     private Node nodeChildLeft;
     private Node nodeParent;
 
-    public Node (int nodeValue){
-        this.nodeValue = nodeValue;
+    public Node (int root){
+        this.nodeValue = root;
+    }
+
+    public void setNodeChildRight(Node nodeChildRight) {
+        this.nodeChildRight = nodeChildRight;
+    }
+
+    public void setNodeChildLeft(Node nodeChildLeft) {
+        this.nodeChildLeft = nodeChildLeft;
+    }
+
+    public void setNodeParent(Node nodeParent) {
+        this.nodeParent = nodeParent;
     }
 
     public int getNodeValue(){
