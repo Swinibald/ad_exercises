@@ -1,8 +1,12 @@
 package ch.hslu.ad.Week_4;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @SuppressWarnings("rawtypes")
 public class HashTable implements HashTableInterface{
 
+    private static Logger log = LoggerFactory.getLogger(HashTable.class);
     private Object[] hashTable = null;
 
     public HashTable() {
@@ -14,11 +18,15 @@ public class HashTable implements HashTableInterface{
         int index = Math.abs(element.hashCode()) % 9;
         boolean foundPlace = false;
         while (foundPlace == false){
+            if (!isFull()){
             if(hashTable[index] == null){
                 hashTable[index] = element; 
                 foundPlace = true;
             }else{
                 index++;
+            }}else{
+                log.info("Table full");
+                throw new IllegalStateException("Table is full");
             }
         }
             
