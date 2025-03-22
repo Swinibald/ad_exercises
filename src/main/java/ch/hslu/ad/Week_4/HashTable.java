@@ -1,19 +1,27 @@
 package ch.hslu.ad.Week_4;
 
-
-
 @SuppressWarnings("rawtypes")
 public class HashTable implements HashTableInterface{
 
-    private Object[] hashTable;
+    private Object[] hashTable = null;
 
     public HashTable() {
+        this.hashTable = new Object[10];
     }
 
     @Override
     public void addHash(Object element) {
-        int index = Math.abs(element.hashCode()) % 10;
-        hashTable[index] = element;
+        int index = Math.abs(element.hashCode()) % 9;
+        boolean foundPlace = false;
+        while (foundPlace == false){
+            if(hashTable[index] == null){
+                hashTable[index] = element; 
+                foundPlace = true;
+            }else{
+                index++;
+            }
+        }
+            
     }
 
     @Override
@@ -22,7 +30,7 @@ public class HashTable implements HashTableInterface{
         while(i != 10){
             if (element.equals(hashTable[i])){
                 return true;
-            }
+            }else
             i++;
         }
         return false;
@@ -37,5 +45,17 @@ public class HashTable implements HashTableInterface{
             }
             i++;
         }
+    }
+
+    public boolean isFull(){
+            for (int i = 0; i != 10; i++){
+                if (hashTable[i] == null){
+                    return false;
+                }
+           
+        } return true;
+    }
+    public Object[] getTable(){
+        return hashTable;
     }
 }
