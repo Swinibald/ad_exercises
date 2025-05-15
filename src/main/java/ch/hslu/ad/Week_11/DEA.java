@@ -24,7 +24,6 @@ public class DEA {
         currentState = State.Z0; // Initialzustand
     }
 
-    // Methode zum Übergang zwischen Zuständen basierend auf Ereignissen
     public void handleEvent(Event event) {
         switch (currentState) {
             case Z0:
@@ -65,7 +64,7 @@ public class DEA {
                 if (event == Event.ONE) {
                     currentState = State.Z2;
                 }else{
-                    currentState = State.Z5; //might a be problem!!!
+                    currentState = State.Z5;
                 }
                 break;
             
