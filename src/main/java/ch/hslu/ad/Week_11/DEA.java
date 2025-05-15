@@ -65,7 +65,7 @@ public class DEA {
                 if (event == Event.ONE) {
                     currentState = State.Z2;
                 }else{
-                    currentState = State.Z5; //might be problem!!!
+                    currentState = State.Z5; //might a be problem!!!
                 }
                 break;
             
