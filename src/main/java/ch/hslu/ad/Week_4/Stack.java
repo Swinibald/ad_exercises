@@ -3,7 +3,6 @@ package ch.hslu.ad.Week_4;
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import org.slf4j.LoggerFactory;
-import ch.hslu.ad.Week_4.StackInterface;
 import org.slf4j.Logger;
 
 public class Stack implements StackInterface{

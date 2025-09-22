@@ -14,7 +14,7 @@ public class Tree implements treeInterface {
     
         @Override
         public int getRoot() {
-            // TODO Auto-generated method stub
+            
             throw new UnsupportedOperationException("Unimplemented method 'getRoot'");
         }
     
@@ -47,7 +47,7 @@ public class Tree implements treeInterface {
     
         @Override
         public void deleteNode(int node) {
-            // TODO Auto-generated method stub
+            //  Auto-generated method stub
             throw new UnsupportedOperationException("Unimplemented method 'deleteNode'");
         }
     

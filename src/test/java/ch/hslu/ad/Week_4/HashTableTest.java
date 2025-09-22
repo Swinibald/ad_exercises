@@ -21,7 +21,7 @@ public class HashTableTest {
         HashTable hash = new HashTable();
         int element = 1;
         int element1 = 11;
-        int index = Math.abs(Integer.valueOf(element).hashCode()) % 9;
+       
         hash.addHash(Integer.valueOf(element));
         hash.addHash(Integer.valueOf(element1));
         assertEquals(element1, hash.search(element1));

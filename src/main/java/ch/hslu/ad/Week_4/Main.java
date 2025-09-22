@@ -19,7 +19,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        int[] bigArray = base.createArray(100000); // Array korrekt ausgeben
+        
         //Stack ownStack = new Stack(100000);
         long time = System.nanoTime();
         for (int i = 100000; i != 0; i = i-1){
