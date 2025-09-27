@@ -2,9 +2,9 @@ package ch.hslu.ad.Week2_1;
 
 public class Fibonacci {
 
-    private int fibNum[];
+    private static int fiboList[];
 
-    private int fiboRec1(int n) {
+    public int fiboRec1(int n) {
         if (n <= 1) { 
             return n; //Rekursionsanker 
         } else {
@@ -12,25 +12,30 @@ public class Fibonacci {
         }
     }
 
-    private int fiboRec2(int n){
+    public int fiboRec2(int n){
+        
         if (n <= 1) {
-            return n; //Rekursionsanker 
+            return n; //Rekursionsanker
         } else {
-            return fiboRec1(n - 1) + fiboRec1(n - 2); //Rekursionsvorschrift
+            if (fiboList[n] != -1) {
+                return fiboList[n];
+            }
+            fiboList[n] = fiboRec2(n - 1) + fiboRec2(n - 2); //Rekursionsvorschrift
+            return fiboList[n];
         }
     }
 
-    private int fiboIter(int n){
-        if (n <= 1) {
-            return n;
-        }else{
-            while(int i = 0, )
+    public int fiboIter(int n){
+            int a = 0;
+            int b = 1;
+            int c = 0;
+            for(int i = n  ;i>=0; i--){
+                a = b;
+                b = c;
+                c = a + b;
+            }
+            return b;
         }
-
-    }
-
-
-
 
 
 public static void main(String[] args) {
