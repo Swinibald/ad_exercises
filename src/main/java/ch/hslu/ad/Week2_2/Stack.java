@@ -1,7 +1,5 @@
 package ch.hslu.ad.Week2_2;
 
-import ch.hslu.ad.Week_4.base;
-
 public interface Stack<E> {
 
 
