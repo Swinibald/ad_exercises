@@ -9,8 +9,7 @@ public class List<E> implements Iterable<E> {
     private Node<E> head;
 
     public boolean add(E value){  
-        Node<E> node = new Node<E>(value, null);
-        node.next = head; 
+        Node<E> node = new Node<E>(value, head);
         head = node;
         size++;
         return true;
@@ -27,15 +26,14 @@ public class List<E> implements Iterable<E> {
         return false;
     }
 
-    public Node<E> deleteFirst(){
+    public E deleteFirst(){
         if (head == null) {
             return null;
         }else{
             Node<E> deletedNode = head;
-            Node<E> node = head.next;
-            head = node;
+            head = head.next;
             size--;
-            return deletedNode;    
+            return deletedNode.value;    
         }
     }
 

@@ -2,10 +2,14 @@ package ch.hslu.ad.Week2_2;
 
 import java.util.EmptyStackException;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class StackMachine {
 
     private final StackImp<Integer> stack;
-    private final List<String> cmds; // use your linked list
+    private final List<String> cmds;
+    private static final Logger log = LoggerFactory.getLogger(StackMachine.class);
 
     public StackMachine(int size) {
         this.stack = new StackImp<>(size);
@@ -14,7 +18,7 @@ public class StackMachine {
 
     public void load(int x) {
         if (!stack.push(x)) {
-            System.err.println("Error: Stack is full, cannot LOAD " + x);
+            log.error("Error: Stack is full, cannot LOAD " + x);
         }
     }
 
@@ -24,7 +28,7 @@ public class StackMachine {
             int b = stack.pop();
             stack.push(b + a);
         } catch (EmptyStackException e) {
-            System.err.println("Error: ADD requires two operands");
+            log.error("Error: ADD requires two operands", e);
         }
     }
 
@@ -34,7 +38,7 @@ public class StackMachine {
             int b = stack.pop();
             stack.push(b * a);
         } catch (EmptyStackException e) {
-            System.err.println("Error: MUL requires two operands");
+            log.error("Error: MUL requires two operands", e);
         }
     }
 
@@ -43,12 +47,13 @@ public class StackMachine {
             int a = stack.pop();
             int b = stack.pop();
             if (a == 0) {
-                System.err.println("Error: Division by zero");
+                log.error("Error: Division by zero");
+                stack.push(b);
                 return;
             }
             stack.push(b / a);
         } catch (EmptyStackException e) {
-            System.err.println("Error: DIV requires two operands");
+            log.error("Error: DIV requires two operands", e);
         }
     }
 
@@ -58,7 +63,7 @@ public class StackMachine {
             int b = stack.pop();
             stack.push(b - a);
         } catch (EmptyStackException e) {
-            System.err.println("Error: SUB requires two operands");
+            log.error("Error: SUB requires two operands", e);
         }
     }
 
@@ -66,12 +71,12 @@ public class StackMachine {
         try {
             System.out.println(stack.pop());
         } catch (EmptyStackException e) {
-            System.err.println("Error: PRINT requires one operand");
+            log.error("Error: PRINT requires one operand", e);
         }
     }
 
     public void execute() {
-        for (String cmd : cmds) { // use iterator from your linked list
+        for (String cmd : cmds) {
             String[] parts = cmd.split(" ");
             String command = parts[0];
             switch (command) {
@@ -95,13 +100,13 @@ public class StackMachine {
                     print();
                     break;
                 default:
-                    System.err.println("Unknown command: " + command);
+                    log.error("Error: Unknown command " + command);
             }
         }
     }
 
     public void addCommand(String cmd) {
-        cmds.add(cmd); // add command to your linked list
+        cmds.add(cmd);
     }
 
     public static void main(String[] args) {

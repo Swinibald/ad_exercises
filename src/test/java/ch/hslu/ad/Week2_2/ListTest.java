@@ -26,12 +26,16 @@ public class ListTest {
         list.add(12);
         assertFalse(list.search(13));
     }
-
+    @Test 
+    void testDeleteFirstError(){
+        List<Integer> list = new List<>();
+        assertEquals(null, list.deleteFirst());
+    }
     @Test
     void testDeleteFirstSuccess(){
         List<Integer> list = new List<>();
         list.add(12);
-        assertEquals(12, list.deleteFirst().value);
+        assertEquals(12, list.deleteFirst());
     }
 
     @Test
@@ -73,5 +77,30 @@ public class ListTest {
         list.delete(111);
         list.delete(7);
         assertEquals(2, list.size());
+    }
+
+    @Test
+    void testSizeDeleteFirst() {
+        List<Integer> list = new List<>();
+        list.add(12);
+        list.add(7);
+        list.add(9);
+        list.add(111);
+        list.deleteFirst();
+        list.deleteFirst();
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    void testSizeAll() {
+        List<Integer> list = new List<>();
+        list.add(12);
+        list.add(7);
+        list.delete(12);
+        list.add(111);
+        list.delete(111);
+        list.deleteFirst();
+        list.add(0);
+        assertEquals(1, list.size());
     }
 }
