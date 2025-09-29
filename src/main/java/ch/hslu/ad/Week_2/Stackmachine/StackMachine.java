@@ -42,7 +42,6 @@ public class StackMachine {
 
     public void print(){
         System.out.println(stack.pop());
-
     }
 
     public void div(){
@@ -57,8 +56,7 @@ public class StackMachine {
         int a = stack.pop();  
         int b = stack.pop();  
         int c = a - b;
-        stack.push(c);
-        
+        stack.push(c); 
     }
 
     public static void main (String[] args){
