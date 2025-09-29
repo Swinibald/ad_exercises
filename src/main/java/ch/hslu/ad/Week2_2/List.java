@@ -5,8 +5,8 @@ import java.util.Objects;
 
 public class List<E> implements Iterable<E> {
 
-    private int size;
-    private Node<E> head;
+    private int size = 0;
+    private Node<E> head = null;
 
     public boolean add(E value){  
         Node<E> node = new Node<E>(value, head);
