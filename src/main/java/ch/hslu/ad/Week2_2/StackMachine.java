@@ -1,17 +1,15 @@
 package ch.hslu.ad.Week2_2;
 
-import java.util.ArrayList;
 import java.util.EmptyStackException;
-import java.util.List;
 
 public class StackMachine {
 
     private final StackImp<Integer> stack;
-    private final List<String> cmds;
+    private final List<String> cmds; // use your linked list
 
     public StackMachine(int size) {
         this.stack = new StackImp<>(size);
-        this.cmds = new ArrayList<>();
+        this.cmds = new List<>();
     }
 
     public void load(int x) {
@@ -73,8 +71,8 @@ public class StackMachine {
     }
 
     public void execute() {
-        for (String i : cmds) {
-            String[] parts = i.split(" ");
+        for (String cmd : cmds) { // use iterator from your linked list
+            String[] parts = cmd.split(" ");
             String command = parts[0];
             switch (command) {
                 case "LOAD":
@@ -103,17 +101,17 @@ public class StackMachine {
     }
 
     public void addCommand(String cmd) {
-        cmds.add(cmd);
+        cmds.add(cmd); // add command to your linked list
     }
 
     public static void main(String[] args) {
         StackMachine sm = new StackMachine(10);
-        sm.addCommand("LOAD 2");
-        sm.addCommand("LOAD 3");
-        sm.addCommand("ADD");
-        sm.addCommand("LOAD 4");
-        sm.addCommand("MUL");
         sm.addCommand("PRINT"); // should print 20
+        sm.addCommand("MUL");
+        sm.addCommand("LOAD 4");
+        sm.addCommand("ADD");
+        sm.addCommand("LOAD 3");
+        sm.addCommand("LOAD 2");
         sm.execute();
     }
 }
