@@ -3,6 +3,7 @@ package ch.hslu.ad.Week2_3;
 public class TreeImp implements Tree{
 
     private Node root = null;
+    private int size = 0;
 
     public TreeImp(){
         Node node5 = new Node(5);
@@ -20,6 +21,7 @@ public class TreeImp implements Tree{
         node10.setChildLeft(new Node(9));
         Node node9 = node10.getChildLeft();
         node9.setChildLeft(new Node(8));
+        this.size = 10;
     }
     
 
@@ -76,4 +78,23 @@ public class TreeImp implements Tree{
         }
         return false;
     }
+
+    public String inOrder(){
+        Node current = root;
+        int tree = new Array[int];
+        int i = 0;
+        for(size){
+            while(current.getChildLeft() != null || current.getChildLeft().getValue() == tree[i]){
+                current = current.getChildLeft();   
+            }
+            tree[i] = current.getValue();
+        }
+        System.out.println(tree)
+    }
+    
+    public static void main(String[] args) {
+        TreeImp imp = new TreeImp()
+        imp.inOrder()
+    }
 }
+

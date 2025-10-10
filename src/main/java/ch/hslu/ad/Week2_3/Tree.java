@@ -5,5 +5,4 @@ public interface Tree {
     boolean delete(int i);
     void replaceRoot(int i);
     boolean add(int i);
-
 }
