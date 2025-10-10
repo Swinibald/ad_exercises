@@ -1,5 +1,7 @@
 package ch.hslu.ad.Week2_3;
 
+import java.util.Arrays;
+
 public class TreeImp implements Tree{
 
     private Node root = null;
@@ -7,6 +9,7 @@ public class TreeImp implements Tree{
 
     public TreeImp(){
         Node node5 = new Node(5);
+        this.root = node5;
         node5.setChildLeft(new Node(3));
         node5.setChildRight(new Node(7));
         Node node3 = node5.getChildLeft();
@@ -79,22 +82,22 @@ public class TreeImp implements Tree{
         return false;
     }
 
-    public String inOrder(){
+    public void inOrder(){
         Node current = root;
-        int tree = new Array[int];
+        int[] tree = null;
         int i = 0;
-        for(size){
+        for (int j = 0; j < size; j++) {
             while(current.getChildLeft() != null || current.getChildLeft().getValue() == tree[i]){
                 current = current.getChildLeft();   
             }
             tree[i] = current.getValue();
         }
-        System.out.println(tree)
+        System.out.println(Arrays.toString(tree));
     }
     
     public static void main(String[] args) {
-        TreeImp imp = new TreeImp()
-        imp.inOrder()
+        TreeImp imp = new TreeImp();
+        imp.inOrder();
     }
 }
 
