@@ -1,11 +1,13 @@
 package ch.hslu.ad.Week2_3;
 
-import java.util.Arrays;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TreeImp implements Tree{
 
-    private Node root = null;
+    private static Node root = null;
     private int size = 0;
+    private static final Logger log = LoggerFactory.getLogger(TreeImp.class);
 
     public TreeImp(){
         Node node5 = new Node(5);
@@ -33,12 +35,15 @@ public class TreeImp implements Tree{
         Node currentNode = root;
         while (currentNode != null) {
             if (searchable == currentNode.getValue()) {
+                log.info(String.valueOf(currentNode.getValue()));
                 return true;
             }
             else if (searchable < currentNode.getValue()) {
+                log.info(String.valueOf(currentNode.getValue()));
                 currentNode = currentNode.getChildLeft();
             }
             else if (searchable > currentNode.getValue()) {
+                log.info(String.valueOf(currentNode.getValue()));
                 currentNode = currentNode.getChildRight();
             }
         }
@@ -60,6 +65,9 @@ public class TreeImp implements Tree{
     @Override
     public boolean add(int addative) {
         Node currentNode = root;
+        if (root == null) {
+            root = new Node(addative);
+        }
         while (currentNode != null) {
             if (addative == currentNode.getValue()) {
                 return false;
@@ -82,22 +90,18 @@ public class TreeImp implements Tree{
         return false;
     }
 
-    public void inOrder(){
-        Node current = root;
-        int[] tree = null;
-        int i = 0;
-        for (int j = 0; j < size; j++) {
-            while(current.getChildLeft() != null || current.getChildLeft().getValue() == tree[i]){
-                current = current.getChildLeft();   
-            }
-            tree[i] = current.getValue();
+    public void inOrder(Node node){
+        if (node == null){
+            return;
         }
-        System.out.println(Arrays.toString(tree));
-    }
+        inOrder(node.getChildLeft());
+        System.out.println(node.getValue());
+        inOrder(node.getChildRight());
+        }
     
     public static void main(String[] args) {
         TreeImp imp = new TreeImp();
-        imp.inOrder();
+        imp.search(8);
     }
 }
 
